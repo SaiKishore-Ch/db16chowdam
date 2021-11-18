@@ -1,0 +1,21 @@
+extends layout
+block content
+ h1= title
+
+ - let Gunid = toShow._id
+ - let name = toShow.name
+ - let color = toShow.color
+ - let weight  = toShow.weight
+ div
+ div.row
+ div(class='GunAttr mr-3') Gun ID is:
+ div #{Gunid}
+ div.row
+ div(class='GunAttr mr-3') Gun Name is:
+ div #{name}
+ div.row
+ div(class='GunAttr mr-3') Gun color is:
+ div #{color}
+ div.row
+ div(class='GunAttr mr-3') Gun weight is:
+ div #{weight}
