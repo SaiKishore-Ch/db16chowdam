@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to  Sai Kishore Chowdam  #{title}
-  button(type="button", class="btn btn-secondary", onclick="update()") Press Me
-  <br>
-  <br>
+  //- h1= title
+  //- p Welcome to  Sai Kishore Chowdam  #{title}
+  //- button(type="button", class="btn btn-secondary", onclick="update()") Press Me
+  //- <br>
+  //- <br>
   
-  div(id="target") Display
+  //- div(id="target") Display
   
   |
   script. 
@@ -15,5 +15,14 @@ block content
     function update() {
       client_count = client_count + 1;
       document.getElementById("target").innerHTML = `Value now ${client_count}`  ;
-      }
-  a(href='Gun') Go to Gun Page      
+      } 
+  
+  if (!user) 
+    a(href="/login") Login 
+    br 
+    a(href="/register") Register 
+  if (user) 
+    p You are currently logged in as #{user.username} 
+    a(href="/Gun") Take me to Gun 
+    br 
+    a(href="/logout") Logout    
